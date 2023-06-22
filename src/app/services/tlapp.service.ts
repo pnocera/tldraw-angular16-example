@@ -44,8 +44,10 @@ export class TlappService {
         },
       },
     };
-
-    this.app?.createShapes([newshape, arrow]);
+    this.app?.batch(() => {
+      this.app?.createShapes([newshape, arrow]);
+      this.app?.select(newshape.id);
+    });
   }
 
   public hasBoundStartArrow(shape: any) {

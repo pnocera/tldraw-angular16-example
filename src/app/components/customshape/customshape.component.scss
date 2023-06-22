@@ -1,12 +1,12 @@
-.shape-container{
-  pointer-events: all; 
-  width: 100%; 
-  height: 100%; 
+.shape-container {
+  pointer-events: all;
+  width: 100%;
+  height: 100%;
   background-color: rgb(250, 189, 96);
-  border-radius: 5px; 
+  border-radius: 5px;
 }
 
-button{
+button {
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -29,7 +29,11 @@ button{
   opacity: var(--fa-secondary-opacity, 1);
 }
 
-.add-secondary{
+.add-secondary {
   fill: gray;
   opacity: 1;
+}
+
+.add-secondary:hover {
+  fill: orange;
 }
