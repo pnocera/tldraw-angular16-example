@@ -12,7 +12,7 @@ import {
   TLStateUtil as SU,
 } from './components/customshape/customshape';
 
-// Finally, collect the custom tools and shapes into a config object
+// Collect the custom tools and shapes into a config object
 export const customTldrawConfig = new TldrawEditorConfig({
   tools: [StateTool],
   shapes: [StateShapeDef],
