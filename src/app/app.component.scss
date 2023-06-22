@@ -1,0 +1,59 @@
+.tldrawcontainer{
+  width: 100%; 
+  height: 78vh;
+  border: 1px solid;
+  border-color: gray;
+}
+
+
+::ng-deep {
+
+  .tlui-menu-zone__controls {
+    .tlui-menu__trigger {
+      visibility: hidden;
+      display: none;
+    }
+
+    .tlui-menu-zone__divider {
+      visibility: hidden;
+      display: none;
+    }
+
+    .tlui-popover {
+      visibility: hidden;
+      display: none;
+    }
+  }
+
+
+  // .tlui-help-menu {
+  //   visibility: hidden;
+  //   display: none;
+  // }
+
+  .tlui-toolbar__tools {
+    // .tlui-toolbar__overflow {
+    //   visibility: hidden;
+    //   display: none;
+    // }
+
+    // [data-wd="tools.draw"] {
+    //   visibility: hidden;
+    //   display: none;
+    // }
+
+    // [data-wd="tools.eraser"] {
+    //   visibility: hidden;
+    //   display: none;
+    // }
+
+    [data-wd="tools.state"] {
+      .tlui-icon {
+        background-color: orange !important;
+      }
+    }
+
+   
+
+  }
+}

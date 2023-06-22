@@ -1,0 +1,35 @@
+.shape-container{
+  pointer-events: all; 
+  width: 100%; 
+  height: 100%; 
+  background-color: rgb(250, 189, 96);
+  border-radius: 5px; 
+}
+
+button{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: 1;
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: 1;
+  opacity: var(--fa-secondary-opacity, 1);
+}
+
+.add-secondary{
+  fill: gray;
+  opacity: 1;
+}

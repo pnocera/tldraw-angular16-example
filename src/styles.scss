@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Inter', sans-serif;
+	overscroll-behavior: none;
+	touch-action: none;
+	min-height: 100vh;
+	/* mobile viewport bug fix */
+	min-height: -webkit-fill-available;
+	height: 100%;
+}
+
+html,
+* {
+	box-sizing: border-box;
+}
+
+ngneat-dialog {
+  .ngneat-dialog-backdrop {
+    // backdrop styles
+    
+    .ngneat-dialog-content {
+      // dialog content, where your component/template is placed
+      background-color: aliceblue;
+      .ngneat-drag-marker {
+        // draggable marker
+      }
+      .ngneat-close-dialog {
+        // 'X' icon for closing the dialog
+      }
+    }
+  }
+}

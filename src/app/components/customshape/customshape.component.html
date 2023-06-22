@@ -1,0 +1,42 @@
+<div class="rs-shape" data-shape-type="state" draggable="false"
+  style="opacity: 1; z-index: 8; clip-path: none; color: var(--palette-orange); width: 150px; height: 80px;">
+
+
+  <svg id="{{shapeid}}" class="rs-svg-container ">
+    <path class="rs-hitarea-fill-solid" fill="var(--palette-orange-semi)" d="M0, 0L150, 0,150, 80,0, 80Z"></path>
+    <path d="M0, 0L150, 0,150, 80,0, 80Z" stroke="var(--palette-orange)" stroke-width="3.5" fill="none"
+      stroke-linejoin="round"></path>
+  </svg>
+  <svg viewBox="0 0 512 512"
+    style="width:16px; height:16px; pointer-events: all;cursor: pointer; position: absolute; top: 3px; left:3px;"
+    (mouseup)="onMouseUp($event)" (mousedown)="onMouseDown($event)">
+    <path
+      d="M256 8C119 8 8 119.08 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 110a42 42 0 1 1-42 42 42 42 0 0 1 42-42zm56 254a12 12 0 0 1-12 12h-88a12 12 0 0 1-12-12v-24a12 12 0 0 1 12-12h12v-64h-12a12 12 0 0 1-12-12v-24a12 12 0 0 1 12-12h64a12 12 0 0 1 12 12v100h12a12 12 0 0 1 12 12z"
+      class="fa-secondary" />
+    <path
+      d="M256 202a42 42 0 1 0-42-42 42 42 0 0 0 42 42zm44 134h-12V236a12 12 0 0 0-12-12h-64a12 12 0 0 0-12 12v24a12 12 0 0 0 12 12h12v64h-12a12 12 0 0 0-12 12v24a12 12 0 0 0 12 12h88a12 12 0 0 0 12-12v-24a12 12 0 0 0-12-12z"
+      class="fa-primary" />
+  </svg>
+
+  <div class="rs-text-label" data-font="sans" data-align="middle" data-hastext="true" data-isediting="false"
+    data-textwrap="true">
+    <div class="rs-text-label__inner"
+      style="font-size: 22px; line-height: 28px; min-height: 0px; min-width: 0px; color: var(--palette-black); pointer-events: all;">
+      <div>
+        {{text}}
+      </div>
+    </div>
+
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 512 512" style="width:16px; height:16px; pointer-events: all;cursor: pointer; margin-top: 8px;"
+      (mousedown)="addState()" *ngIf="!hasBoundStartArrow">
+      <path
+        d="M256 16C123.42 16 16 123.422 16 256S123.42 496 256 496S496 388.578 496 256S388.58 16 256 16ZM382.625 302.625L278.646 406.602C270.664 414.602 260.9 416 256 416C251.119 416 241.346 414.609 233.354 406.602L129.375 302.625C116.875 290.125 116.875 269.875 129.375 257.375S162.125 244.875 174.625 257.375L224 306.75V128C224 110.312 238.328 96 256 96S288 110.312 288 128V306.75L337.375 257.375C349.875 244.875 370.125 244.875 382.625 257.375S395.125 290.125 382.625 302.625Z"
+        class="add-secondary" />
+      <path
+        d="M382.625 302.625L278.646 406.602C270.664 414.602 260.9 416 256 416C251.119 416 241.346 414.609 233.354 406.602L129.375 302.625C116.875 290.125 116.875 269.875 129.375 257.375S162.125 244.875 174.625 257.375L224 306.75V128C224 110.312 238.328 96 256 96S288 110.312 288 128V306.75L337.375 257.375C349.875 244.875 370.125 244.875 382.625 257.375S395.125 290.125 382.625 302.625Z"
+        class="fa-primary" />
+    </svg>
+  </div>
+</div>
