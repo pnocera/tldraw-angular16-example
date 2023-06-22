@@ -1,5 +1,5 @@
-<div style="padding: 10px;">
+<div style="padding: 10px;" #topdiv>
   <h2>Welcome to tldraw in Angular</h2>
   <button (click)="toggleDarkMode()">Toggle dark mode</button>
 </div>
-<div class="tldrawcontainer" [reactComponent]="Tldraw" [props]="props">
+<div class="tldrawcontainer" [ngStyle]="tldrawheight" [reactComponent]="Tldraw" [props]="props">

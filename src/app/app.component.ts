@@ -1,4 +1,11 @@
-import { Component, OnDestroy } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  OnDestroy,
+  ViewChild,
+  ElementRef,
+  AfterViewInit,
+} from '@angular/core';
 import { App, Tldraw } from '@tldraw/tldraw';
 
 import type { ComponentProps } from 'react';
@@ -11,11 +18,17 @@ import { TlappService } from './services/tlapp.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnDestroy {
+export class AppComponent implements OnDestroy, AfterViewInit {
   Tldraw = Tldraw;
   props!: ComponentProps<typeof Tldraw>;
 
   darkmode = false;
+
+  @ViewChild('topdiv') topdiv: ElementRef<HTMLDivElement> | undefined;
+
+  tldrawheight = {
+    height: '100%',
+  };
 
   constructor(private appsvc: TlappService) {
     const assetsurl = Utils.getAssetUrlsByMetaUrl({
@@ -29,6 +42,9 @@ export class AppComponent implements OnDestroy {
       config: customTldrawConfig,
       overrides: [customOverride],
     };
+  }
+  ngAfterViewInit(): void {
+    this.onWindowResized();
   }
   ngOnDestroy(): void {
     this.appsvc.Dispose();
@@ -51,5 +67,18 @@ export class AppComponent implements OnDestroy {
       isDarkMode: this.darkmode,
       isSnapMode: true,
     });
+  }
+
+  @HostListener('window:resize', [])
+  public onWindowResized() {
+    if (this.topdiv && this.topdiv.nativeElement) {
+      const div: HTMLDivElement = this.topdiv.nativeElement;
+      if (!!div) {
+        const rect = div.getBoundingClientRect();
+        const availableheight =
+          Math.round(window.innerHeight - rect.bottom) - 1;
+        this.tldrawheight.height = `${availableheight}px`;
+      }
+    }
   }
 }
