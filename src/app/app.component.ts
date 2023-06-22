@@ -32,7 +32,7 @@ export class AppComponent implements OnDestroy, AfterViewInit {
 
   constructor(private appsvc: TlappService) {
     const assetsurl = Utils.getAssetUrlsByMetaUrl({
-      baseUrl: 'http://localhost:4200',
+      baseUrl: window.location.href,
     });
 
     this.props = {
